@@ -38,6 +38,7 @@ for i in range(rounds):
     Y_predicate = X_test @ W
 
     desc = np.sign(Y_predicate)
-    acc = np.sum(Y_test == desc)
+    hits = np.sum(Y_test == desc)
+    acc = hits / X_test.shape[0] * 100
 
-    print(f"Accuracy: {(acc/X_test.shape[0]*100):.4}%")
+    print(f"Accuracy: {acc:.4}%")
